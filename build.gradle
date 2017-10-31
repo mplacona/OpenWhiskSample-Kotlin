@@ -20,8 +20,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    compile "com.google.code.gson:gson:2.8.1"
-    compile "com.github.salomonbrys.kotson:kotson:2.5.0"
 }
 
 compileKotlin {
@@ -29,8 +27,4 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
-}
-
-jar {
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
